@@ -1,1 +1,24 @@
 
+from math import sqrt
+
+class vector:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+        
+    def __str__(self,other):
+        return 'Vector(%d,%d)' %(self.x, self.y)
+        
+    def __add__(self,other):
+        return Vector(self.x + other.x, self.y + other.y)
+        
+    def __mul__(self,other):
+        return Vector(self.x * other, self.y * other)
+        
+    def __abs__(self):
+        return sqrt(self.x * self.x + self.y * self.y)
+V1 = Vector(3,4)
+V2 = Vector(5,-2)
+print(V1 + V2)
+print(V1 * 3)
+print(abs(V1))
